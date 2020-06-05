@@ -50,7 +50,9 @@ while line ==1:
 	try:
 
 		if len(str(archivo))  >  0:
-			tools.file(archivo)
+			configs = tools.file(archivo)
+			datos = configs[0]
+			name = configs[1]
 			print(f"{Fore.RESET}INICIANDO....")
 			sleep(2)
 			break

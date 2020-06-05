@@ -1,3 +1,7 @@
+from datetime import date
+import random
+import string
+
 def formatCCs(CCtocheck):
 
     today = date.today()
@@ -37,11 +41,14 @@ def generateMail():
     return email
 
 def file(nombre):
-		if ".txt" in nombre:
-			file = open(nombre).readlines()
-			file = [archivo.rstrip() for archivo in file]
-			for lines in file:
-				datos.append(lines)
-			name.append(nombre)
-		else:
-			raise TypeError
+    datos= []
+    name = []
+    if ".txt" in nombre:
+        file = open(nombre).readlines()
+        file = [archivo.rstrip() for archivo in file]
+        for lines in file:
+            datos.append(lines)
+        name.append(nombre)
+        return [datos,name]
+    else:
+        raise TypeError
